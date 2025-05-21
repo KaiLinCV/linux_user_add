@@ -1,5 +1,7 @@
 #!/bin/bash
 #
+# Created by Kai-Lin Chuang
+#
 # This script creates a new user on the local system
 # You must supply a username as an argument to the script
 # Any argument after the username argument will be count as a comment
@@ -30,7 +32,7 @@ USER_NAME="${1}"
 shift
 COMMENT="${@}" 
 
-# Generate a password
+# Generate a random password
 SP_CHARACTER=$(echo '!@#$%^&*()_+-=' | fold -w1 | shuf | head -c1)
 PASSWORD=$(date +%s%N${RANDOM} | sha256sum | head -c10)
 PASSWORD_ENHANCED=$(echo "${PASSWORD}${SP_CHARACTER}" | fold -w1 | shuf | tr -d '\n' )
