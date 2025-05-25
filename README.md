@@ -75,11 +75,11 @@ The user will be prompt to changed their password immdediately upon first login.
 ### 6. Successful Login
 Once the password is reset, the user will be logged into the system.
 
-![LoginSuccess](./screenshots/07_LoggedIn)
+![LoginSuccess](./screenshots/07_LoggedIn.png)
 
 ---
 
-## Technique Used
+## Techniques Used
 Secure password generation using:
   - Current timestamp
   - sha256sum hashing
