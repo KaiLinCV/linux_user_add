@@ -1,4 +1,4 @@
-# 🧑‍💻 Add New Local User – Bash Script
+# Add New Local User – Bash Script
 
 This project demonstrates a bash script that automates the process of adding a new local user to a Linux system. It’s designed for system administrators to efficiently manage user onboarding with security best practices in mind.
 
@@ -13,7 +13,7 @@ This project demonstrates a bash script that automates the process of adding a n
 
 ---
 
-## 🛠️ Script Execution Flow
+## 💻 Script Execution Flow
 
 ### 1. ❌ Non-admin attempt
 
@@ -31,4 +31,52 @@ The script accepts:
 
 ```bash
 sudo ./add_new_local_user.sh Jim "Jim Lee"
+```
+![AdminPrivilege](./screenshots/02_RunScriptAdmin.png)
+
+---
+
+### 3. ⚙️ Script Actions
+When access is granted, the script will do the following:
+1. Adds the user
+2. Sets a random password
+3. Displays the account credentials and hostname
+
+![ScriptActions](./screenshots/03_WhenScriptRuns.png)
+
+---
+
+### 4. 👤 User Login
+After the new user is created, they can log into the system.
+
+![UserLogin](./screenshots/04_UserLogin.png)
+
+---
+
+### 5. 🔑 Forced Password Reset
+The user will be prompt to changed their password immdediately upon first login.
+
+![PassReset](./screenshots/05_PassReset.png)
+![NewPass](./screenshots/06_NewPass.png)
+
+---
+
+### 6. ✅ Successful Login
+Once the password is reset, the user will be logged into the system.
+
+![LoginSuccess](./screenshots/07_LoggedIn)
+
+---
+
+## ⌨️ Technique Used
+Secure password generation using:
+  - Current timestamp
+  - sha256sum hashing
+  - Special character insertion
+  - Random shuffling with fold, head, tr
+
+Conditional checks:
+  - Script ensures it’s run as root
+  - Verifies success after each critical step
+  - Aborts immediately on failure to protect system integrity
 
