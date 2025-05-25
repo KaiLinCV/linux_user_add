@@ -1,9 +1,20 @@
 # Add New Local User – Bash Script
 
-This project demonstrates a bash script that automates the process of adding a new local user to a Linux system. It’s designed for system administrators to efficiently manage user onboarding with security best practices in mind.
+This bash script automates the process of adding a new local user to a Linux system. I created it as a hands-on exercise to practice bash scripting and automate user account creation while following security best practices.
 
 ---
+## 📚 Table of Contents
+- [Features](#features)
+- [Script Execution Flow](#script-execution-flow)
+  - [Non-admin attempt](#1-non-admin-attempt)
+  - [Running the script with sudo](#2-running-the-script-with-sudo)
+  - [Script Actions](#3-script-actions)
+  - [User Login](#4-user-login)
+  - [Forced Password Reset](#5-forced-password-reset)
+  - [Successful Login](#6-successful-login)
+- [Techniques Used](#techniques-used)
 
+---
 ## 📌 Features
 
 - ✅ Adds a new user to the local Linux system  
@@ -68,7 +79,7 @@ Once the password is reset, the user will be logged into the system.
 
 ---
 
-## ⌨️ Technique Used
+## 🧪 Technique Used
 Secure password generation using:
   - Current timestamp
   - sha256sum hashing
