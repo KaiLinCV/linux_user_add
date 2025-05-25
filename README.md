@@ -18,10 +18,10 @@ This bash script automates the process of adding a new local user to a Linux sys
 ---
 ## Features
 
-- Adds a new user to the local Linux system  
-- Automatically generates a secure, random password  
-- Outputs the username, password, and hostname to the console for documentation  
-- Enforces password change upon first login
+- Adds a new user to the local Linux system.
+- Automatically generates a secure, random 11 character length password. 
+- Outputs the username, password, and hostname to the console for documentation. 
+- Enforces password change upon first login.
 
 ---
 ## Script Content
@@ -129,9 +129,9 @@ sudo ./add_new_local_user.sh Jim "Jim Lee"
 
 ### 3. Script Actions
 When access is granted, the script will do the following:
-1. Adds the user
-2. Sets a random password
-3. Displays the account credentials and hostname
+1. Adds the user.
+2. Sets a random password.
+3. Displays the account credentials and hostname.
 
 ![ScriptActions](./screenshots/03_WhenScriptRuns.png)
 
@@ -161,13 +161,13 @@ Once the password is reset, the user will be logged into the system.
 
 ## Techniques Used
 Secure password generation using:
-  - Current timestamp
-  - sha256sum hashing
-  - Special character insertion
-  - Random shuffling with fold, head, tr
+  - Current timestamp.
+  - sha256sum hashing.
+  - Special character insertion.
+  - Random shuffling with fold, head, tr.
 
 Conditional checks:
-  - Script ensures it’s run as root
-  - Verifies success after each critical step
-  - Aborts immediately on failure to protect system integrity
+  - Script ensures it’s run as root.
+  - Verifies success after each critical step.
+  - Aborts immediately on failure to protect system integrity.
 
