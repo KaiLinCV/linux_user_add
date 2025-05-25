@@ -65,7 +65,6 @@ COMMENT="${@}"
 SP_CHARACTER=$(echo '!@#$%^&*()_+-=' | fold -w1 | shuf | head -c1)
 PASSWORD=$(date +%s%N${RANDOM} | sha256sum | head -c10)
 PASSWORD_ENHANCED=$(echo "${PASSWORD}${SP_CHARACTER}" | fold -w1 | shuf | tr -d '\n' )
-#echo "${PASSWORD_ENHANCED}"
 
 # Create the user with the password
 useradd -c "${COMMENT}" -m ${USER_NAME}
