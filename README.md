@@ -3,7 +3,7 @@
 This bash script automates the process of adding a new local user to a Linux system. I created it as a hands-on exercise to practice bash scripting and automate user account creation while following security best practices.
 
 ---
-## 📚 Table of Contents
+## Table of Contents
 - [Features](#features)
 - [Script Execution Flow](#script-execution-flow)
   - [Non-admin attempt](#1-non-admin-attempt)
@@ -15,18 +15,18 @@ This bash script automates the process of adding a new local user to a Linux sys
 - [Techniques Used](#techniques-used)
 
 ---
-## 📌 Features
+## Features
 
-- ✅ Adds a new user to the local Linux system  
-- 🔐 Automatically generates a secure, random password  
-- 🧾 Outputs the username, password, and hostname to the console for documentation  
-- 🔄 Enforces password change upon first login (administrator enforced)
+- Adds a new user to the local Linux system  
+- Automatically generates a secure, random password  
+- Outputs the username, password, and hostname to the console for documentation  
+- Enforces password change upon first login
 
 ---
 
-## 💻 Script Execution Flow
+## Script Execution Flow
 
-### 1. ❌ Non-admin attempt
+### 1. Non-admin attempt
 
 Running the script without administrator privileges results in an error:
 
@@ -34,7 +34,7 @@ Running the script without administrator privileges results in an error:
 
 ---
 
-### 2. ✅ Running the script with `sudo`
+### 2. Running the script with `sudo`
 
 The script accepts:
 - First argument: desired username
@@ -47,7 +47,7 @@ sudo ./add_new_local_user.sh Jim "Jim Lee"
 
 ---
 
-### 3. ⚙️ Script Actions
+### 3. Script Actions
 When access is granted, the script will do the following:
 1. Adds the user
 2. Sets a random password
@@ -57,14 +57,14 @@ When access is granted, the script will do the following:
 
 ---
 
-### 4. 👤 User Login
+### 4. User Login
 After the new user is created, they can log into the system.
 
 ![UserLogin](./screenshots/04_UserLogin.png)
 
 ---
 
-### 5. 🔑 Forced Password Reset
+### 5. Forced Password Reset
 The user will be prompt to changed their password immdediately upon first login.
 
 ![PassReset](./screenshots/05_PassReset.png)
@@ -72,14 +72,14 @@ The user will be prompt to changed their password immdediately upon first login.
 
 ---
 
-### 6. ✅ Successful Login
+### 6. Successful Login
 Once the password is reset, the user will be logged into the system.
 
 ![LoginSuccess](./screenshots/07_LoggedIn)
 
 ---
 
-## 🧪 Technique Used
+## Technique Used
 Secure password generation using:
   - Current timestamp
   - sha256sum hashing
