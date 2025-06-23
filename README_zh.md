@@ -1,19 +1,19 @@
 📘 [English](README.md) | 📙 [中文](README_zh.md)
 
-# 👤 Add New Local User – Bash Script
+# 👤 新增本地使用者 – Bash腳本
 
-This bash script automates the process of adding a new local user to a Linux system. I created it as a hands-on exercise to practice bash scripting and automate user account creation while following security best practices.
-
----
-## 📝 Features
-
-- Adds a new user to the local Linux system.
-- Automatically generates a secure, random 11 character length password. 
-- Outputs the username, password, and hostname to the console for documentation. 
-- Enforces password change upon first login.
+這個Bash腳本可自動化在Linux系統中新增本地使用者的流程。我撰寫這個腳本是為了實作練習，透過Bash腳本來自動建立新使用者帳號，並遵循資訊安全的最佳實務。
 
 ---
-## 📜 Script Content
+## 📝 功能特色
+
+- 在本機Linux系統中新增使用者帳號  
+- 自動產生11字元長度的安全隨機密碼  
+- 輸出使用者名稱，密碼與主機名稱，方便記錄管理  
+- 強制使用者在首次登入時更改密碼  
+
+---
+## 📜 腳本内容
 
 ```bash 
 #!/bin/bash
@@ -92,21 +92,21 @@ exit 0
 ```
 ---
 
-## ⌨️ Script Execution Flow
+## ⌨️ 腳本執行流程
 
-### 1. Non-admin attempt
+### 1. 非管理員執行
 
-Running the script without administrator privileges results in an error:
+若未使用管理員權限執行腳本，將出現錯誤提示：
 
 ![Permission Denied](./screenshots/01_RunningWithoutPermission.png)
 
 ---
 
-### 2. Running the script with `sudo`
+### 2. 使用`sudo`執行
 
-The script accepts:
-- First argument: desired username
-- Remaining arguments: comment (e.g., full name)
+腳本接受以下參數：
+- 第一個參數：欲建立的使用者名稱  
+- 後續參數：帳號的註解資訊（如使用者姓名）
 
 ```bash
 sudo ./add_new_local_user.sh Jim "Jim Lee"
@@ -115,60 +115,61 @@ sudo ./add_new_local_user.sh Jim "Jim Lee"
 
 ---
 
-### 3. Script Actions
+### 3. 腳本操作內容
 
-When access is granted, the script will do the following:
-1. Adds the user.
-2. Sets a random password.
-3. Displays the account credentials and hostname.
+當授權成功後，腳本將會：
+1. 新增使用者帳號
+2. 設定隨機密碼
+3. 顯示使用者帳號、密碼與主機名稱
 
 ![ScriptActions](./screenshots/03_WhenScriptRuns.png)
 
 ---
 
-### 4. User Login
+### 4. 使用者登入
 
-After the new user is created, they can log into the system:
+帳號建立完成後，使用者可使用預設密碼登入系統：
 
 ![UserLogin](./screenshots/04_UserLogin.png)
 
 ---
 
-### 5. Forced Password Reset
+### 5. 強制更改密碼
 
-The user will be prompt to changed their password immdediately upon first login:
+使用者首次登入後，系統會立即要求變更密碼：
 
 ![PassReset](./screenshots/05_PassReset.png)
+
 ![NewPass](./screenshots/06_NewPass.png)
 
 ---
 
-### 6. Successful Login
+### 6. 成功登入
 
-Once the password is reset, the user will be logged into the system:
+密碼變更成功後，使用者即可登入系統：
 
 ![LoginSuccess](./screenshots/07_LoggedIn.png)
 
 ---
 
-## 🧪 Techniques Used
+## 🧪 使用技術
 
-Secure password generation using:
-  - Current timestamp.
-  - sha256sum hashing.
-  - Special character insertion.
-  - Random shuffling with fold, head, tr.
+密碼安全產生方式：
+  - 利用目前時間戳記產生基礎隨機值
+  - 使用sha256sum進行雜湊處理
+  - 插入隨機特殊符號
+  - 搭配fold，head，tr指令進行隨機打亂
 
-Conditional checks:
-  - Script ensures it’s run as root.
-  - Verifies success after each critical step.
-  - Aborts immediately on failure to protect system integrity.
+條件判斷與錯誤處理：
+  - 確保腳本必須以root身分執行
+  - 每個重要步驟皆會進行成功檢查
+  - 一旦發現錯誤，立即中止腳本以保障系統穩定性
 
 ---
 
-## 📙 Conclusion
+## 📙 結論
 
-This project allowed me to deepen my understanding of Linux user management, conditional logic, and secure password generation through hands-on bash scripting. I created this script as a way to automate a common administrative task while reinforcing key security best practices, such as enforcing password resets and validating script success at each step.
+這個專案讓我透過實作深入學習了Linux使用者管理，條件判斷邏輯與安全密碼產生的技巧。我撰寫這個腳本是為了自動化一項常見的系統管理任務，同時強化如強制更改密碼與步驟成功驗證等資訊安全實務。
 
-Through this exercise, I gained confidence in using bash to solve real-world system administration challenges and strengthened my ability to write reliable and easy to use scripts for future automation tasks.
+透過這次的練習，我對於使用Bash解決實務系統管理問題更加有信心，也提升了撰寫穩定且易於使用的自動化腳本能力，為未來更進階的自動化任務做好準備。
 
